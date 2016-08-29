@@ -13,7 +13,7 @@ public interface RoleService {
 	public boolean addRole(Role role);
 	
 	//Update
-	public boolean updateRole(Role role, int id);
+	public boolean updateRole(Role role);
 	
 	//Delete
 	public boolean deleteRole(Role role);
