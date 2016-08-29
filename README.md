@@ -1,12 +1,12 @@
 
 ### Steps to merge the code to your branch ###
 
-* Use "git branch" to know your current branch, if you are not in your branch use "git checkout <your-branch>" and go to your branch.
-* Check that you are on the right branch using git branch
-* Checkout dev-master branch, using "git checkout dev-master"
+* Use `"git branch"` to know your current branch, if you are not in your branch use `"git checkout your-branch"` and go to your branch.
+* Check that you are on the right branch using `git branch`
+* Checkout dev-master branch, using `"git checkout dev-master"`
 * Pull the latest contents using "git pull"
-* Now again checkout to your branch using "git checkout <your-branch>
-* At last, merge your branch with dev-master using "git merge dev-master"
+* Now again checkout to your branch using `"git checkout your-branch"`
+* At last, merge your branch with dev-master `"git merge dev-master"`
 
 
 ### Steps to run project ###
