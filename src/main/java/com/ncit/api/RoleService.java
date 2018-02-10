@@ -16,7 +16,7 @@ public interface RoleService {
 	public boolean updateRole(Role role);
 	
 	//Delete
-	public boolean deleteRole(Role role);
+	public boolean deleteRole(int id);
 	
 	//Get Role By ID
 	public Role getRoleById(int id);

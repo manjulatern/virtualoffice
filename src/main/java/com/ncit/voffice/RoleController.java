@@ -53,7 +53,9 @@ public class RoleController {
 		if (isAdded) {
 			List<Role> roleList = roleService.getRoles();
 			model.addAttribute("roles", roleList);
-			return new ModelAndView("redirect:");
+			//return new ModelAndView("redirect:");
+			//return new ModelAndView(new RedirectView("roles/"));
+			return new ModelAndView("redirect:/roles/");
 		} else {
 			return new ModelAndView("roles/add", "command", new Role());
 		}
@@ -64,8 +66,8 @@ public class RoleController {
 	public String deleteRole(@PathVariable int id, Model model,
 			RedirectAttributes redir) {
 
-		Role role = roleService.getRoleById(id);
-		boolean isDeleted = roleService.deleteRole(role);
+		//Role role = roleService.getRoleById(id);
+		boolean isDeleted = roleService.deleteRole(id);
 
 		String msg = "";
 		if (!isDeleted) {
@@ -95,7 +97,7 @@ public class RoleController {
 		if (isUpdated) {
 			List<Role> roleList = roleService.getRoles();
 			model.addAttribute("roles", roleList);
-			return new ModelAndView("redirect:");
+			return new ModelAndView("redirect:/roles");
 		} else {
 			return new ModelAndView("roles/edit", "command", role);
 		}

@@ -44,38 +44,45 @@ public class UserServiceImpl implements UserService {
 
 		List<User> userList = new ArrayList<User>();
 
-		String query = "SELECT * from users";
+		String query = "" + "SELECT u.first_name   AS fname, "
+				+ "       u.last_name    AS lname, "
+				+ "       u.id    AS userId, "
+				+ "       u.username     AS username, "
+				+ "       u.password     AS password, "
+				+ "       u.address      AS address, "
+				+ "       u.created_date AS createdDate, "
+				+ "       u.email        AS email, "
+				+ "       u.mobile       AS mobile, "
+				+ "       u.status       AS userStatus, "
+				+ "       u.role_id       AS roleId, "
+				+ "       r.name         AS rname, "
+				+ "       r.description         AS rdescription "
+				+ "FROM   users u " + "       JOIN roles r "
+				+ "         ON u.role_id = r.id";
 
 		try {
 			ResultSet rs = statement.executeQuery(query);
 
 			while (rs.next()) {
 				User user = new User();
-
-				user.setId(rs.getInt("id"));
-				user.setFirstName(rs.getString("first_name"));
-				user.setLastName(rs.getString("last_name"));
+				
+				user.setId(rs.getInt("userId"));
+				user.setFirstName(rs.getString("fname"));
+				user.setLastName(rs.getString("lname"));
 				user.setUsername(rs.getString("username"));
 				user.setAddress(rs.getString("address"));
-				user.setCreatedDate(rs.getDate("created_date"));
+				user.setCreatedDate(rs.getDate("createdDate"));
 				user.setEmail(rs.getString("email"));
 				user.setMobile(rs.getString("mobile"));
+				user.setStatus(rs.getString("userStatus"));
 				user.setPassword(rs.getString("password"));
-				user.setStatus(rs.getString("status"));
-
-				int roleId = rs.getInt("role_id");
-
-				String query1 = "SELECT * from roles where id = " + roleId + "";
-
-				ResultSet rs1 = statement.executeQuery(query1);
-
+				user.setStatus(rs.getString("userStatus"));
+				
 				Role role = new Role();
-				while (rs1.next()) {
-					role.setId(rs.getInt("id"));
-					role.setName(rs.getString("name"));
-					role.setDescription(rs.getString("description"));
-				}
-
+				role.setId(rs.getInt("roleId"));
+				role.setName(rs.getString("rname"));
+				role.setDescription(rs.getString("rdescription"));
+				
 				user.setRole(role);
 
 				// add user to List
@@ -86,7 +93,7 @@ public class UserServiceImpl implements UserService {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return null;
+		return userList;
 	}
 
 	@Override

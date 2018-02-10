@@ -15,8 +15,9 @@ public class User {
 	Date createdDate;
 	Role role;
 	String status;
+	
 	public int getId() {
-		return id;
+		return id;	
 	}
 	public void setId(int id) {
 		this.id = id;

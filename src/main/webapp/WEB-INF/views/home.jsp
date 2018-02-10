@@ -13,5 +13,7 @@
 
 <h2> P.S. This is my first controller.</h2>
 <a href="/voffice/roles">Roles Module</a>
+
+<a href="/voffice/ajax">Ajax Demonstration</a>
 </body>
 </html>

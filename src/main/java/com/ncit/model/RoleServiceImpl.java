@@ -73,8 +73,8 @@ public class RoleServiceImpl implements RoleService {
 	}
 
 	@Override
-	public boolean deleteRole(Role role) {
-		String query = "DELETE from roles where id = " + role.getId() + "";
+	public boolean deleteRole(int id) {
+		String query = "DELETE from roles where id = " + id + "";
 
 		try {
 			statement.execute(query);

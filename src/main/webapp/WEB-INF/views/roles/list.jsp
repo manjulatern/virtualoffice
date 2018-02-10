@@ -26,13 +26,14 @@
 					<td>${role.id}</td>
 					<td>${role.name}</td>
 					<td>${role.description}</td>
-					<td><a href="/voffice/roles/delete/${role.id}">Delete</a> | <a
+					<td><a href="/voffice/roles/delete/${role.id}" onclick="return confirm('Are you sure you want to delete? ')">Delete</a> | <a
 						href="/voffice/roles/edit/${role.id}">Edit</a> | <a href="">View</a></td>
 				</tr>
 			</c:forEach>
 		</table>
 		<div>
 			<a href="/voffice/roles/add">Add Roles</a>
+			<a href="#">Add Roles (Ajax)</a>
 		</div>
 	</div>
 
